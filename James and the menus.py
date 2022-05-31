@@ -17,9 +17,9 @@ for i in range(n):
 mx = [0]*m
 su = [0]*n
 for i in range(n):
+    su[i]=sum(lis[i])
     for j in range(m):
         mx[j] = max(mx[j],lis[i][j])
-        su[i] += lis[i][j]
 
 
 cn = [0]*n
@@ -40,7 +40,7 @@ ansSum = 0
 ansIndex = 0
 if len(index)>1:
     for i in range(len(index)):
-        temp = su[index[i]]/4
+        temp = su[index[i]]/m
         if temp>ansSum:
             ansSum = temp
             ansIndex = index[i]
